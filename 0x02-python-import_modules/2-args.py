@@ -7,9 +7,9 @@ if __name__ == "__main__":
     if x < 1:
     	print("{} arguments.".format(x))
     elif x == 1:
-    	print("{} argument." .format(x))
+    	print("{} argument:" .format(x))
     else:
-    	print("{} arguments." .format(x))
+    	print("{} arguments:" .format(x))
 
     if x > 0:
         num = 0
