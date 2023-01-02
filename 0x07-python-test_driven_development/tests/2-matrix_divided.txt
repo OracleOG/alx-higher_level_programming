@@ -1,0 +1,17 @@
+``` The 2-matrix_divided module```
+===================================
+
+using matrix-divided
+----------------------------------
+
+importing function from module
+
+divide matrix with an integer
+
+divide matrix with a float
+
+divide a matrix with unequal row
+
+divide matrix with a string
+
+divide matrix with 0

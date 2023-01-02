@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""
+This Module is composed of a function that divides elements in a matrix.
+"""
+
+def matrix_divided(matrix, div):
+    """ a function that divides matrix by the value of the value of div
+
+
+    Args:
+        matrix: a list of list of integers
+        div: an integer to divide the matrix by
+
+    Return:
+          A new list of already divided matrix
+
+    Raises:
+    """
+    for i in matrix:
+        if not isinstance(i, list):
+            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        if len(matrix[0]) != len(i):
+            raise TypeError("Each row of the matrix must have the same size")
+
+    if not isinstance(div, int) and not isinstance(div, float):
+        raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
+
+    m = list(map(lambda x: list(map(lambda y: round(y / div, 2), x)), matrix))
+
+    return m
