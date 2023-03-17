@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+""" a module on creating base cases
+"""
+
+class Base:
+    __nd_objects = 0
+
+    def __init(self, id=None):
+        if id == None:
+            __nd_objects += 1
+            self.id = __nd_objects
+        else:
+            self.id = id
