@@ -21,7 +21,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ getter for private attr width """
-        if not isinstance(int, value):
+        if not isinstance(value, int):
             raise TypeError(<name of the attribute> must be an integer)
        elif value < 1:
             raise ValueError(<name of the attribute> must be > 0)
@@ -35,9 +35,9 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ getter for private attr width """
-        if not isinstance(int, value):
-            raise TypeError(<name of the attribute> must be an integer)
-       elif value < 1:
+        if not isinstance(value, int):
+            TypeError(<name of the attribute> must be an integer)
+        elif value < 1:
             raise ValueError(<name of the attribute> must be > 0)
         self.__name = value
 
@@ -49,7 +49,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ getter for private attr width """
-        if not isinstance(int, value):
+        if not isinstance(value, int):
             raise TypeError(<name of the attribute> must be an integer)
        elif value < 0:
             raise ValueError(<name of the attribute> must be >= 0)
@@ -63,7 +63,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ getter for private attr width """
-         if not isinstance(int, value):
+         if not isinstance(value, int):
             raise TypeError(<name of the attribute> must be an integer)
        elif value < 0:
             raise ValueError(<name of the attribute> must be >= 0)
