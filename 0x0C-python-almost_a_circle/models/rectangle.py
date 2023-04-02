@@ -2,6 +2,7 @@
 """ a module tha defines the class rectnagle """
 from models.base import Base
 
+
 class Rectangle(Base):
     """ a class that defines a rectangle. """
 
@@ -18,35 +19,36 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self,value):
-         """ getter for private attr width """
-         self.name = value
+    def width(self, value):
+        """ getter for private attr width """
+        self.name = value
 
     @property
     def height(self):
-         """ getter for private attr width """
-         return self.__height
+        """ getter for private attr width """
+        return self.__height
 
     @height.setter
-    def height(self,value):
-         """ getter for private attr width """
-         self.name = value
+    def height(self, value):
+        """ getter for private attr width """
+        self.name = value
 
     @property
     def x(self):
-         """ getter for private attr width """
-         return self.__x
+        """ getter for private attr width """
+        return self.__x
 
     @x.setter
-    def x(self,value):
-         """ getter for private attr width """
-         self.name = value
+    def x(self, value):
+        """ getter for private attr width """
+        self.name = value
 
     @property
     def y(self):
-         """ getter for private attr width """
-         return self.__y
+        """ getter for private attr width """
+        return self.__y
+
     @y.setter
     def y(self, value):
-         """ getter for private attr width """
-         self.name = value
+        """ getter for private attr width """
+        self.name = value
