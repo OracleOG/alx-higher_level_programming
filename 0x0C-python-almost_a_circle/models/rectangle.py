@@ -21,7 +21,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ getter for private attr width """
-        self.name = value
+        self.__name = value
 
     @property
     def height(self):
@@ -31,7 +31,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ getter for private attr width """
-        self.name = value
+        self.__name = value
 
     @property
     def x(self):
@@ -41,7 +41,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ getter for private attr width """
-        self.name = value
+        self.__name = value
 
     @property
     def y(self):
@@ -51,4 +51,4 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ getter for private attr width """
-        self.name = value
+        self.__name = value
