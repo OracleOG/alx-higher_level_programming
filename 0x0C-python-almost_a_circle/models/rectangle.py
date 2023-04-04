@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ a module tha defines the class rectnagle """
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -79,3 +79,8 @@ class Rectangle(Base):
             for row in range(self.width):
                 print('#', end='')
             print()
+
+    def __str__(self):
+        str_1 = f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+        str_2 = f"{self.width}/{self.height}"
+        return f"{str_1} - {str_2}"
