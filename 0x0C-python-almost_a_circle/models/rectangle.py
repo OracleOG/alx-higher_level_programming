@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ a module tha defines the class rectnagle """
-from models.base import Base
+from base import Base
 
 
 class Rectangle(Base):
@@ -89,9 +89,6 @@ class Rectangle(Base):
 
     def update(self, *args):
         """ assigns positional args to all attributes of the class rectangle"""
-        attr = [self.id, self.width, self.height,
-                self.x, self.y]
-        num = 0
-        for argv in args:
-            attr[num] = argv
-            num += 1
+        attr = [id, width, height, x, y]
+        for argv, num in zip(args, attr):
+            setattr(self, num, argv)
