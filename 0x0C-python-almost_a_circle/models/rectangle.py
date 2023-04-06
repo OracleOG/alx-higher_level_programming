@@ -88,6 +88,7 @@ class Rectangle(Base):
         return f"{str_1} - {str_2}"
 
     def update(self, *argv):
+        """ assigns positional args to all attributes of the class rectangle"""
         attr = [self.id, self.width, self.height,
                 self.x, self.y]
         num = 0
