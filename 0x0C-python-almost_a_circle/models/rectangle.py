@@ -89,6 +89,8 @@ class Rectangle(Base):
 
     def update(self, *args):
         """ assigns positional args to all attributes of the class rectangle"""
-        attr = [id, width, height, x, y]
+        attr = ['id', 'width', 'height', 'x', 'y']
+        """for i in range(len(args)):
+            setattr(self, attr[i], args[i])"""
         for argv, num in zip(args, attr):
             setattr(self, num, argv)
