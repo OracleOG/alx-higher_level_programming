@@ -75,10 +75,12 @@ class Rectangle(Base):
 
     def display(self):
         """ prints to stdout the rectangle instance with character '#' """
+        horin = '\n' * self.y
+        print(horin, end='')
+
         for col in range(self.height):
-            for row in range(self.width):
-                print('#', end='')
-            print()
+            print(' ' * self.x, end='')
+            print('#' * self.width, end='\n')
 
     def __str__(self):
         str_1 = f"[Rectangle] ({self.id}) {self.x}/{self.y}"
