@@ -86,3 +86,9 @@ class Rectangle(Base):
         str_1 = f"[Rectangle] ({self.id}) {self.x}/{self.y}"
         str_2 = f"{self.width}/{self.height}"
         return f"{str_1} - {str_2}"
+    def update(self, *args):
+        self.id = argv[0]
+        self.width = argv[1]
+        self.height = argv[2]
+        self.x = argv[3]
+        self.y = argv[4]
