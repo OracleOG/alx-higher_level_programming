@@ -87,10 +87,14 @@ class Rectangle(Base):
         str_2 = f"{self.width}/{self.height}"
         return f"{str_1} - {str_2}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assigns positional args to all attributes of the class rectangle"""
         attr = ['id', 'width', 'height', 'x', 'y']
         """for i in range(len(args)):
             setattr(self, attr[i], args[i])"""
-        for argv, num in zip(args, attr):
-            setattr(self, num, argv)
+        if args is >= 0 and is not None:
+            for argv, num in zip(args, attr):
+                setattr(self, num, argv)
+        else:
+            for kw, value in kwargs.items():
+                setattr(self, kw, value)
