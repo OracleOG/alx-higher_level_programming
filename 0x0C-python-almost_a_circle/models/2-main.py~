@@ -1,0 +1,116 @@
+""" Check 
+from rectangle import Rectangle
+
+r = Rectangle(12, 14, 4, 5, 10)
+if r is None:
+    print("Can't create Rectangle")
+    exit(1)
+
+if r._Rectangle__width != 12:
+    print("Wrong private width: {}".format(r._Rectangle__width))
+    exit(1)
+
+if r.width != 12:
+    print("Wrong width getter: {}".format(r._Rectangle__width))
+    exit(1)
+
+r.width = 5
+
+if r._Rectangle__width != 5:
+    print("Wrong private width: {}".format(r._Rectangle__width))
+    exit(1)
+
+if r.width != 5:
+    print("Wrong width getter: {}".format(r._Rectangle__width))
+    exit(1)
+
+print("OK", end="")
+"""
+
+""" Check """
+"""
+from rectangle import Rectangle
+
+try:
+    Rectangle(13, "12")
+    print("TypeError exception not raised")
+    exit(1)
+except TypeError as e:
+    if str(e) != "height must be an integer":
+        print("Wrong exception message: {}".format(e))
+        exit(1)
+except Exception as e:
+    print("Wrong exception: [{}] {}".format(type(e), e))
+    exit(1)
+
+try:
+    Rectangle(13, [13])
+    print("TypeError exception not raised")
+    exit(1)
+except TypeError as e:
+    if str(e) != "height must be an integer":
+        print("Wrong exception message: {}".format(e))
+        exit(1)
+except Exception as e:
+    print("Wrong exception: [{}] {}".format(type(e), e))
+    exit(1)
+
+try:
+    Rectangle(13, 13.12)
+    print("TypeError exception not raised")
+    exit(1)
+except TypeError as e:
+    if str(e) != "height must be an integer":
+        print("Wrong exception message: {}".format(e))
+        exit(1)
+except Exception as e:
+    print("Wrong exception: [{}] {}".format(type(e), e))
+    exit(1)
+
+try:
+    Rectangle(13, { 'id': 12 })
+    print("TypeError exception not raised")
+    exit(1)
+except TypeError as e:
+    if str(e) != "height must be an integer":
+        print("Wrong exception message: {}".format(e))
+        exit(1)
+except Exception as e:
+    print("Wrong exception: [{}] {}".format(type(e), e))
+    exit(1)
+
+print("OK", end="")
+"""
+#!/usr/bin/python3
+""" 3-main """
+from rectangle import Rectangle
+
+if __name__ == "__main__":
+
+    r1 = Rectangle(10, 10, 10, 10)
+    print(r1)
+
+    r1.update(89)
+    print(r1)
+
+    r1.update(89, 2)
+    print(r1)
+
+    r1.update(89, 2, 3)
+    print(r1)
+
+    r1.update(89, 2, 3, 4)
+    print(r1)
+
+    r1.update(89, 2, 3, 4, 5)
+    print(r1)
+
+    """r4 = Rectangle(3, 2)
+    print(r1.area())
+
+    r2 = Rectangle(2, 10)
+    print(r2.area())
+
+    r3 = Rectangle(8, 7, 0, 0, 12)
+    print(r3.area())
+"""
