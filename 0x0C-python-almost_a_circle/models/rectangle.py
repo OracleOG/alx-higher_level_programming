@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" a module tha defines the class rectnagle """
+""" a module that defines the class rectnagle """
 from models.base import Base
 
 
