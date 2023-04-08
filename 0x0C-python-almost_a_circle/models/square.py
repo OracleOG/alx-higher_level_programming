@@ -47,3 +47,5 @@ class Square(Rectangle):
 
         for x in attr:
             sqr_dict.update({x: getattr(self, x)})
+
+        return sqr_dict
