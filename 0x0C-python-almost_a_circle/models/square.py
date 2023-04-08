@@ -32,7 +32,7 @@ class Square(Rectangle):
 
         atrr = ['id', 'size', 'x', 'y']
 
-        if len(args) != 0 and args not None:
+        if len(args) != 0 and args is not None:
             for argv, num in zip(args, atrr):
                 setattr(self, num, argv)
         else:
