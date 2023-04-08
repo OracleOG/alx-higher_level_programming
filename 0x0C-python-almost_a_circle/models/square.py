@@ -42,7 +42,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ returns the dictionary representation of a Rectangle """
 
-        attr = ['id', 'width', 'height', 'x', 'y']
+        attr = ['id', 'size', 'x', 'y']
+        sqr_dict = {}
 
         for x in attr:
-            rect_dict = { x: self.x}
+            sqr_dict.update({x: getattr(self, x)})
