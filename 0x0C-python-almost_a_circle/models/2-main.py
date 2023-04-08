@@ -1,102 +1,18 @@
 #!/usr/bin/python3
 """ Check """
 from square import Square
+from rectangle import Rectangle
 
 s = Square(5)
-if s.id != 1:
-    print("ID must be equal to 1: {}".format(s.id))
-    exit(1)
-
-if s.width != 5:
-    print("Width of the Square must be 5: {}".format(s.width))
-    exit(1)
-
-if s.height != 5:
-    print("Height of the Square must be 5: {}".format(s.height))
-    exit(1)
-
-try:
-    Square("12")
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Square([13])
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Square(13.12)
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Square({ 'id': 12 })
-    print("TypeError exception not raised")
-    exit(1)
-except TypeError as e:
-    if str(e) != "width must be an integer":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-    
-try:
-    Square(-12)
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Square(-89)
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-try:
-    Square(0)
-    print("ValueError exception not raised")
-    exit(1)
-except ValueError as e:
-    if str(e) != "width must be > 0":
-        print("Wrong exception message: {}".format(e))
-        exit(1)
-except Exception as e:
-    print("Wrong exception: [{}] {}".format(type(e), e))
-    exit(1)
-
-print("OK", end="")
+r = Rectangle(5,7)
+print(s.__dict__)
+print(r.__dict__)
+print('----------------')
+dict = {}
+print (len(dict))
+print('----------------')
+r1 = Rectangle(10, 2, 1, 9)
+print(r1)
+r1_dictionary = r1.to_dictionary()
+print(r1_dictionary)
+print(type(r1_dictionary))
