@@ -13,3 +13,7 @@ class Base:
             self.id = Base.__nd_objects
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        return [list_dictionaries]
