@@ -8,7 +8,7 @@ class Square(Rectangle):
     """ a class that defines the object square """
 
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(id, x, y, size, size)
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """ a str documentation for the object square """
@@ -19,7 +19,7 @@ class Square(Rectangle):
     @property
     def size(self):
         """ getter for size """
-        return self.size
+        return self.width
 
     @size.setter
     def size(self, value):

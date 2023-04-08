@@ -92,7 +92,7 @@ class Rectangle(Base):
         attr = ['id', 'width', 'height', 'x', 'y']
         """for i in range(len(args)):
             setattr(self, attr[i], args[i])"""
-        if len(args) is not 0 and args is not None:
+        if len(args) > 0 and args is not None:
             for argv, num in zip(args, attr):
                 setattr(self, num, argv)
         else:
