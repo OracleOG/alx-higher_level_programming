@@ -52,7 +52,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ creates an instance from the dictionary argument"""
-        if cls.__name__ = 'Rectangle':
+        if cls.__name__ == 'Rectangle':
             inst = Rectangle(10, 5)
         else:
             inst = square(10)
