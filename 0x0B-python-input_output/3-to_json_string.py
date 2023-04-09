@@ -15,6 +15,6 @@ def to_json_string(my_obj):
     raises no exceptions
 """
 
-    filedata = json.dumps(obj)
+    filedata = json.dumps(my_obj)
 
     return filedata
