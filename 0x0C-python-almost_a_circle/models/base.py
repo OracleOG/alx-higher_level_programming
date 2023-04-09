@@ -30,12 +30,12 @@ class Base:
         dict_list = []
 
         if list_objs is None:
-            return '[]'
+            pass
         else:
             for objs in list_objs:
                 dict_list.append(objs.to_dictionary())
 
-            json_dict = cls.to_json_string(dict_list)
+        json_dict = cls.to_json_string(dict_list)
 
-            with open(filename, 'w', encoding="utf-8") as f:
-                f.write(json_dict)
+        with open(filename, 'w', encoding="utf-8") as f:
+            f.write(json_dict)
