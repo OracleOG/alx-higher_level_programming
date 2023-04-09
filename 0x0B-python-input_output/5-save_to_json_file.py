@@ -16,4 +16,3 @@ representation
 """
     with open(filename, 'w', encoding="utf-8") as f:
         filedata = json.dump(my_obj, f)
-        return filedata
