@@ -66,7 +66,7 @@ class Base:
         """ returns list of list of instances from a json string representation
 of instances"""
         filename = "{}.json".format(cls.__name__)
-        list_int = []
+        list_inst = []
 
         if os.path.exists(filename) is False:
             return []
