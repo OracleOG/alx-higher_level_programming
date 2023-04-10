@@ -59,3 +59,17 @@ class Base:
         inst.update(**dictionary)
 
         return inst
+
+    @classmethod
+    def load_from(cls):
+        filename = "{}.json".format(cls.__name__)
+        list_int = []
+
+        with open(filename, 'r', encoding="uft-8") as f:
+            json_str = f.read()
+        list_json_str = cls.from_json_string(json_str)
+
+        for list_dict in list_json_str:
+            list_inst.append(cls.create(list_dict))
+
+        return list_inst
