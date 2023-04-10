@@ -67,7 +67,6 @@ class Base:
 of instances"""
         filename = "{}.json".format(cls.__name__)
 
-
         if os.path.exists(filename) is False:
             return []
 
