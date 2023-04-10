@@ -76,6 +76,6 @@ of instances"""
         list_json_str = cls.from_json_string(json_str)
 
         for num in range(len(list_json_str)):
-            list_inst.append(cls.create(**(list_json_str[num])))
+            list_inst.append(cls.create(**list_json_str[num]))
 
         return list_inst
