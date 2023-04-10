@@ -66,14 +66,17 @@ class Base:
         """ returns list of list of instances from a json string representation
 of instances"""
         filename = "{}.json".format(cls.__name__)
-        list_inst = []
+
 
         if os.path.exists(filename) is False:
             return []
 
-        with open(filename, 'r', encoding="uft-8") as f:
+        with open(filename, 'r') as f:
             json_str = f.read()
+
         list_json_str = cls.from_json_string(json_str)
+
+        list_inst = []
 
         for num in range(len(list_json_str)):
             list_inst.append(cls.create(**list_json_str[num]))
