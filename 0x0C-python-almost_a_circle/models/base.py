@@ -2,6 +2,7 @@
 """ a module on creating base cases
 """
 import json
+import os.path
 
 
 class Base:
