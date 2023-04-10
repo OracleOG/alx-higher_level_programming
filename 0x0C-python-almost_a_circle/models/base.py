@@ -63,6 +63,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """ returns list of list of instances from a json string representation
+of instances"""
         filename = "{}.json".format(cls.__name__)
         list_int = []
 
