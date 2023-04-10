@@ -61,9 +61,12 @@ class Base:
         return inst
 
     @classmethod
-    def load_from(cls):
+    def load_from_file(cls):
         filename = "{}.json".format(cls.__name__)
         list_int = []
+
+        if os.path.exists(filename) is False:
+            return []
 
         with open(filename, 'r', encoding="uft-8") as f:
             json_str = f.read()
