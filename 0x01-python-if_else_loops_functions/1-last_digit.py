@@ -1,22 +1,6 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-if number < 0:
-    pnumber = abs(number)
-    lnumber = pnumber % 10
-elif number >= 0:
-    lnumber = number % 10
-print(f"Last digit of {number} is {lnumber} ", end='')
-if lnumber > 5:
-    print(f"and is greater than 5")
-elif lnumber == 0:
-    print(f"and is 0")
-elif lnumber < 6 and lnumber != 0:
-    print(f"and is less than 6 and not 0")
-
-'''#!/usr/bin/python3
-import random
-number = random.randint(-10000, 10000)
 # Last digit of 4205 is 5 and is less than 6 and not 0
 if number >= 0:
     l_digit = number % 10
@@ -36,4 +20,4 @@ elif(l_digit == 0):
     print(f"and is 0")
 elif(l_digit < 6 and l_digit != 0):
     print(f"and is less than 6 and not 0")
-'''
+    
