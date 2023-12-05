@@ -3,11 +3,10 @@
 
 def no_c(my_string):
     x = len(my_string)
-    j = 0
-    new = my_string[:]
+    new = ''
 
     for i in range(x):
-        if (my_string[j] == 'c' or my_string[j] == 'C'):
-            new = new[:i - j] + my_string[i + 1:]
-            j += 1
-    return (new)
+        if (my_string[i] == 'c' or my_string[i] == 'C'):
+            continue
+        new = new + my_string[i]
+    return new
