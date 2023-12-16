@@ -10,6 +10,8 @@ def roman_to_int(roman_string):
     # - use a condition to check if "roman_string" = str or "None" value.
     # - add up value in the str
     for x, rom in enumerate(roman_string):
+        if not isinstance(roman_string, (str, None)):
+            return 0
         if x < strlen:
             if code[rom] < code[roman_string[x + 1]]:
                 num = num - code[rom]
