@@ -6,7 +6,7 @@ def print_matrix_integer(matrix=[[]]):
         x = 0
         for col in row:
             if N_col == x:
-                print("{}".format(col))
+                print("{:d}".format(col))
             else:
-                print("{} ".format(col), end = '')
+                print("{:d} ".format(col), end = '')
             x += 1
