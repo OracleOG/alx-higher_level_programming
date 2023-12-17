@@ -4,6 +4,6 @@ for i in range(0, 9):
     for x in range(num, 10):
         if i != 8:
             print("{:d}{:d}".format(i, x), end='')
-            print(",", end="")
+            print(" ,", end="")
         else:
             print("{:d}{:d}".format(i, x))
