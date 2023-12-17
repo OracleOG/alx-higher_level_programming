@@ -6,4 +6,4 @@ for i in range(0, 9):
             print("{:d}{:d}".format(i, x), end='')
             print(", ", end="")
         else:
-            print("{:d}{:d} ".format(i, x))
+            print("{:d}{:d}".format(i, x))
