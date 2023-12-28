@@ -5,6 +5,7 @@
 
 This module contains the definition of a Class Square"""
 
+
 class Square:
     """ Defines the object class.
 
@@ -15,7 +16,6 @@ class Square:
     def __init__(self, size, position=(0, 0)):
         self.size = size
         self.position = position
-
 
     def area(self):
         """ Method that returns the square are of the object
@@ -60,7 +60,6 @@ class Square:
         """ method that returns the position value
         """
         return self.__position
-
 
     @position.setter
     def position(self, value):
