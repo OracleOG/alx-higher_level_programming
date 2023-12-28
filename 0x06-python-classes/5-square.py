@@ -1,46 +1,50 @@
 #!/usr/bin/python3
 
 
+"""A module to test the functionality of the python "class" feature
+
+This module contains the definition of a Class Square"""
+
 class Square:
-    """ a class that defines the object square
-    """
-    def __init__(self, size):
-        """ Method to initialize the square object
+    """ Defines the object class.
+
+    Args:
+        size - is of no type and no value verification is done on it.
         """
+    def __init__(self, size=0):
+        self.size = size
+
+    @property
+    def size(self):
+        """getter function for the attribute SIZE"""
+        return self.__size
+    
+    @size.setter
+    def size(self, size):
+        """Setter function for the attribute SIZE"""
         if not isinstance(size, int):
-            raise TypeError("size must be an integer")
+            raise TypeError('size must be an integer')
         elif size < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError('size must be >= 0')
         else:
             self.__size = size
 
     def area(self):
-        """ Method that returns the square are of the object
+        """method that returns the square area of the object
+        Args:
+            No Args
         """
-        return (self.__size ** 2)
+        return self.__size ** 2
 
     def my_print(self):
-        if self.__size == 0:
+        """method that prints in stdout the square with the character #
+        Args:
+            No Args
+        """
+        if self.size == 0:
             print()
         else:
-             for i in range(self.__size):
-                for y in range(self.__size):
-                    print("#", end='')
+            for col in range(self.size):
+                for row in range(self.size):
+                    print('#', end='')
                 print()
-                
-    @property
-    def size(self):
-        """ Method to returns the size value
-        """
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """ Method to set the size value of the square object
-        """
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
