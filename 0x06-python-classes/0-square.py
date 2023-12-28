@@ -6,5 +6,7 @@
 This module contains a simple class called Square"""
 
 class Square:
-"""An empty class object"""
+    """An empty class object
+    
+    carries NO arguments"""
     pass
