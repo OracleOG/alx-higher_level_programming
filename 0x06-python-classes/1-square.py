@@ -12,34 +12,3 @@ class Square:
     param (int): size of the square -  has no type and no value verification is done on it."""
     def __init__(self, size):
         self.__size = size
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-class square:
-    """ class square that defines a square object
-
-    """
-    def __init__(self, size):
-        """ initialize method that stores in the size of the square
-
-        args:
-        param1 (int): size of the square
-        """
-        self.size = size
-'''
