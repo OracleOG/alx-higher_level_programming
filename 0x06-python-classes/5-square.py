@@ -5,6 +5,7 @@
 
 This module contains the definition of a Class Square"""
 
+
 class Square:
     """ Defines the object class.
 
@@ -18,7 +19,7 @@ class Square:
     def size(self):
         """getter function for the attribute SIZE"""
         return self.__size
-    
+
     @size.setter
     def size(self, size):
         """Setter function for the attribute SIZE"""
