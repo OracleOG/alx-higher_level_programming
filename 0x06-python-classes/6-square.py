@@ -1,10 +1,18 @@
 #!/usr/bin/python3
 
 
+"""A module to test the functionality of the python "class" feature
+
+This module contains the definition of a Class Square"""
+
 class Square:
-    def __init__(self, size, position=(0, 0)):
-        """ Method to initialize the square object
+    """ Defines the object class.
+
+    __init__ Args:
+        size - is of no type and no value verification is done on it.
+        position - use to create spaces in the my_print function
         """
+    def __init__(self, size, position=(0, 0)):
         self.size = size
         self.position = position
 
@@ -55,6 +63,16 @@ class Square:
 
     @position.setter
     def position(self, value):
+        if not isinstance(value, tuple):
+            raise TypeError('position must be a tuple of 2 positive integers')
+        elif value[0] < 0 or value[1] < 0:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        else:
+            self.__position = value
+
+'''
+    @position.setter
+    def position(self, value):
         """ Method that sets the position value of a square object
         """
         if not isinstance(value, tuple):
@@ -68,3 +86,4 @@ class Square:
         if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
+'''
