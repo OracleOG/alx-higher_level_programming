@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
 
+"""A module to test the functionality of the python class feature
+
+This module contains a simple class called Rectangle"""
+
+
 class Rectangle:
     """ a class that defines the properties of a rectangle
     """
@@ -9,8 +14,6 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-
-
 
     @property
     def width(self):
@@ -28,6 +31,7 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         else:
             self.__width = value
+
     @property
     def height(self):
         """ method that returns the size of height
