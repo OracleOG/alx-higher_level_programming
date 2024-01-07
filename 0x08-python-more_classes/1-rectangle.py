@@ -9,7 +9,7 @@ This module contains a simple class called Rectangle"""
 class Rectangle:
     """ a class that defines the properties of a rectangle
     """
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """ a method that initialises the Rectangle object
         """
         self.width = width
