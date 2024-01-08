@@ -79,7 +79,7 @@ class Rectangle:
         rectangle = ''
         if self.width == 0 or self.height == 0:
             return rectangle
-        
+
         rectangle = []
         for col in range(self.height):
             [rectangle.append('#') for row in range(self.width)]
@@ -93,4 +93,4 @@ class Rectangle:
 
     def __del__(self):
         """deletes an instance of the Rectangle class"""
-        print('Bye Rectangle...')
+        print("Bye rectangle...")
