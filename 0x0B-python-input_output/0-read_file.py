@@ -1,12 +1,16 @@
 #!/usr/bin/python3
-""" module that reads the data of a file
-"""
+
+
+"""A module to test the functionality of 'input & output'
+
+it contains the function read_file"""
 
 
 def read_file(filename=""):
-    """ function reads a file and writes it out to stdout
+    """A function that reads a text file and prints it out n stdout
 
-"""
-    with open(filename, 'r', encoding="utf-8") as f:
-        file_data = f.read()
-        print(file_data, end='')
+        args:
+            filename: is the file o be printed"""
+    with open(filename) as f:
+        for line in f:
+            print(line, end='')
