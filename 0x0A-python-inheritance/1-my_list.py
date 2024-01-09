@@ -8,5 +8,6 @@ Module contains the class MyList that inherits from the Base class 'list'"""
 
 class MyList(list):
     def print_sorted(self):
-        self.sort()
-        print(self)
+        sorted = self[:]
+        sorted.sort()
+        print(sorted)
