@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-import json
+
 
 """ module that contains a function that returns on object represented
 by a JSON string
 """
+import json
 
 
 def from_json_string(my_str):
