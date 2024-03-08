@@ -1,6 +1,6 @@
 -- create a table
 -- tables decription include id and name
-CREATE first_table IF NOT EXISTS
+CREATE TABLE IF NOT EXISTS `first_table`
 (id INT,
 name VARCHAR(256))
 ;
