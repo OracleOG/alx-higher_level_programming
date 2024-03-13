@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const numOfArg = process.argv.length - 2;
 
 if (numOfArg === 0) {
