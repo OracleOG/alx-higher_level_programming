@@ -6,8 +6,10 @@ using the MySQLdb module
 import MySQLdb
 import sys
 
+
 def connect_db(username, password, database):
-    """ Function that initiates connection to MySQLdb using provided arguments"""
+    """ Function that initiates connection to MySQLdb
+      using provided arguments"""
     try:
         db = MySQLdb.connect(
             host="localhost",
@@ -21,15 +23,14 @@ def connect_db(username, password, database):
         sys.exit(1)
 
 
-
-
 def filter_table(db):
     """filters the table for the letter 'N'
     """
     try:
         cur = db.cursor()
 
-        cur.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY id ASC")
+        cur.execute("""SELECT * FROM states
+                     WHERE states.name LIKE 'N%' ORDER BY id ASC""")
         rows = cur.fetchall()
 
         for row in rows:
@@ -38,6 +39,7 @@ def filter_table(db):
     except MySQLdb.Error as e:
         print("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
         sys.exit(1)
+
 
 def main():
     """Main function for this script"""

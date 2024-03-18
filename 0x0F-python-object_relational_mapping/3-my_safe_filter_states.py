@@ -6,8 +6,10 @@ using the MySQLdb module
 import MySQLdb
 import sys
 
+
 def connect_db(username, password, database):
-    """ Function that initiates connection to MySQLdb using provided arguments"""
+    """ Function that initiates connection to MySQLdb
+      using provided arguments"""
     try:
         db = MySQLdb.connect(
             host="localhost",
@@ -21,8 +23,6 @@ def connect_db(username, password, database):
         sys.exit(1)
 
 
-
-
 def filter_table(db, xname):
     """filters the table for rows containg the parameter 'xname'
     """
@@ -30,9 +30,13 @@ def filter_table(db, xname):
         cur = db.cursor()
 
         # Use parameterized query to prevent SQL injection
-        query = "SELECT * FROM states WHERE states.name LIKE %s ORDER BY id ASC"
-        cur.execute(query, (xname + "%",))  # Concatenate '%' to match strings starting with xname
+        query = """SELECT * FROM states
+        WHERE states.name LIKE %s ORDER BY id ASC"""
 
+        # Concatenate '%' to match strings starting with xname
+        cur.execute(query, (xname + "%",))
+
+        rows = cur.fetchall()
 
         for row in rows:
             print("({}, '{}')".format(row[0], row[1]))
@@ -40,6 +44,7 @@ def filter_table(db, xname):
     except MySQLdb.Error as e:
         print("MySQL Error [%d]: %s" % (e.args[0], e.args[1]))
         sys.exit(1)
+
 
 def main():
     """Main function for this script

@@ -6,8 +6,10 @@ using the MySQLdb module
 import MySQLdb
 import sys
 
+
 def connect_db(username, password, database):
-    """ Function that initiates connection to MySQLdb using provided arguments"""
+    """ Function that initiates connection to MySQLdb
+      using provided arguments"""
     try:
         db = MySQLdb.connect(
             host="localhost",
