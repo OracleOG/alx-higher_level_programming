@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""sends a POST request to the passed URL with the email as a parameter"""
+"""Sends a POST request to the passed URL with the email as a parameter
+"""
 from urllib.request import urlopen, Request
 from urllib import parse
 import sys
@@ -13,4 +14,3 @@ req = Request(url, data)
 with urlopen(req) as response:
     html = response.read()
     print(html.decode('utf-8'))
-c
