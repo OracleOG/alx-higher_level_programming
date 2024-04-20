@@ -6,8 +6,10 @@ import sys
 
 
 url = sys.argv[1]
-data = {'email': sys.argv[2]}
-data = parse.urlencode(data)
-req = Request(url)
-with urlopen(url, data) as response:
+values = {'email': sys.argv[2]}
+data = parse.urlencode(values)
+data = data.encode('ascii')
+req = Request(url, data)
+with urlopen(req) as response:
     html = response.read()
+    print(html.decode('utf-8'))
