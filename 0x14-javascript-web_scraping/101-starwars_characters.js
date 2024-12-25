@@ -17,9 +17,9 @@ request(url, (error, response, body) => {
 
   const data = JSON.parse(body);
   const characters = data.characters;
-  
-  fetchCharacter = (url) => {
-    return ( new Promise((resolve, reject) => {
+
+  const fetchCharacter = (url) => {
+    return (new Promise((resolve, reject) => {
       request(url, (error, response, body) => {
         if (error) {
           reject(error);
@@ -27,7 +27,7 @@ request(url, (error, response, body) => {
           resolve(JSON.parse(body).name);
         }
       });
-  }))
+    }));
   };
 
   Promise.all(characters.map(fetchCharacter))
