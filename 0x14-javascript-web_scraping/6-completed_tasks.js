@@ -12,6 +12,7 @@ request(url, (error, response, body) => {
   const data = JSON.parse(body);
   for (const task of data) {
     if (task.completed === true) {
+      completed[task.userId] = completed[task.userId] || 0;
       completed[task.userId] += 1;
     }
   }
