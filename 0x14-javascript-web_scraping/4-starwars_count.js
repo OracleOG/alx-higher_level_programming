@@ -6,23 +6,18 @@ const url = process.argv[2];
 request(url, (error, response, body) => {
   if (error) {
     console.log(error);
-  }
+  } else if (response.statusCode === 200) {
+    const data = JSON.parse(body);
+    let count = 0;
 
-  try {
-    const result = JSON.parse(body);
-    const data = result.results;
-    let filmcount = 0;
-
-    for (const film of data) {
-      for (const film18 of film.characters) {
-        if (film18.search('18') > 0) {
-          filmcount++;
+    for (const film of data.results) {
+      for (const character of film.characters) {
+        if (character.includes('18')) {
+          count++;
         }
       }
     }
 
-    console.log(filmcount);
-  } catch (e) {
-    console.error('Error parsing JSON:', e);
+    console.log(count);
   }
 });
