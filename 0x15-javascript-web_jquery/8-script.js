@@ -1,11 +1,10 @@
 $(document).ready(function() {
-    var url = 'https://swapi-api.alx-tools.com/api/films/?format=json';
-
-    $.getJSON(url, function(data) {
-        var films = data.results
-        for (const value of films) {
-            var title = value['title'];
-            $('UL#list_movies').append('<li>' + title + '</li>');
-        }
-    } )
+    $.get('https://swapi-api.alx-tools.com/api/films/?format=json', function(data) {
+        data.results.forEach(film => {
+            $('UL#list_movies').append('<li>' + film.title + '</li>');
+        });   
     });
+    $.fail(function(xhr, textStatus, errorThrown) {
+        console.error(textStatus, errorThrown);
+    })
+});
