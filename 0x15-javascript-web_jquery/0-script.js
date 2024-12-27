@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    $.get('https://swapi-api.hbtn.io/api/people/5/?format=json', function(data) {
+    $.get('https://swapi-api.alx-tools.com/api/films/?format=json', function(data) {
+        data.results.forEach(film => {
+            $('UL#list_movies').append('<li>' + film.title + '</li>');
+        });
         
-        $('DIV#character').text(data.name);
     });
     $.fail(function(xhr, textStatus, errorThrown) {
         console.error(textStatus, errorThrown);
