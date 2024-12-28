@@ -25,7 +25,7 @@ if __name__ == "__main__":
     # deal with SQL injections
     name = '%s' % search_name
 
-    for states in session.query(State).filter(State.name.like(f'%{name}%').one()):
+    for states in session.query(State).filter(State.name.like(f'%{name}%')).one():
         if states:
             print(f"{states.id}")
         else:
