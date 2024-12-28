@@ -21,7 +21,7 @@ def list_cities(username, password, database):
 
     # Query all city objects and sort by cities.id in ascending order
     cities = session.query(City).order_by(City.id).all()
-    
+
     # Print the results
     for instance in (
             session.query(
