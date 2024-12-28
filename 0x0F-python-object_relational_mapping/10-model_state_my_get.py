@@ -10,22 +10,26 @@ from model_state import Base, State
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} <username> <password> <database> <name>".format(sys.argv[0]))
+        print("""Usage: {} <username> <password>
+               <database> <name>""".format(sys.argv[0]))
         sys.exit(1)
 
     username, password, database, search_name = sys.argv[1:]
 
     engine = create_engine(f'mysql+mysqldb://{username}:{password}'
-                       f'@localhost:3306/{database}', pool_pre_ping=True)
+                           f'@localhost:3306/{database}', pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    #deal with SQL injections
+    # deal with SQL injections
     name = '%s' % search_name
 
     for states in session.query(State).filter(State.name.like(f'%{name}%')):
-        print(f"{states.id}")
+        if states:
+            print(f"{states.id}")
+        else:
+            print("Not found")
 '''
     # Construct the query with a bound parameter
     query = session.query(State).filter(State.name.like(':name'))
@@ -37,7 +41,7 @@ if __name__ == "__main__":
     for state in states:
     print(f"{state.id}: {state.name}")
 
-    
+
 
     #session.close()
 '''
