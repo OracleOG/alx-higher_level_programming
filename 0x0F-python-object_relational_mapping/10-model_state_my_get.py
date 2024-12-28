@@ -26,7 +26,8 @@ if __name__ == "__main__":
     name = '%s' % search_name
 
     try:
-        states = session.query(State).filter(State.name.like(f'%{name}%')).one()
+        states = session.query(State).filter(State.name.like(f'''%{name}%
+                                                             ''')).first()
         print(f"{states.id}")
     except Exception as e:
         print("Not found")
