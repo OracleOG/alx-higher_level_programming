@@ -23,6 +23,6 @@ if __name__ == "__main__":
 
     new_record = State(name='Loiusana')
     session.add(new_record)
-    print(new_record.id)
 
     session.commit()
+    print(new_record.id)
