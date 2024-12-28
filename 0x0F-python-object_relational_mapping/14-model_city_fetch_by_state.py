@@ -6,6 +6,7 @@ import sys
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_city import City
+from model_state import State
 
 
 def list_cities(username, password, database):
@@ -22,8 +23,11 @@ def list_cities(username, password, database):
     cities = session.query(City).order_by(City.id).all()
     
     # Print the results
-    for city in cities:
-        print(f"{city.id}: {city.name}")
+    for instance in (
+            session.query(
+                State.name, City.id, City.name
+                ).filter(State.id == City.state_id)):
+        print(instance[0] + ': (' + str(instance[1]) + ') ' + instance[2])
 
     # Close the session
     session.close()
