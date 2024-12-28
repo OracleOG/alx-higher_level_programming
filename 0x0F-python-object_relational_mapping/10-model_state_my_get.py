@@ -25,11 +25,11 @@ if __name__ == "__main__":
     # deal with SQL injections
     name = '%s' % search_name
 
-    for states in session.query(State).filter(State.name.like(f'%{name}%')).one():
-        if states:
-            print(f"{states.id}")
-        else:
-            print("Not found")
+    try:
+        states = session.query(State).filter(State.name.like(f'%{name}%')).one():
+        print(f"{states.id}")
+    except Exception as e:
+        print("Not found")
 '''
     # Construct the query with a bound parameter
     query = session.query(State).filter(State.name.like(':name'))
