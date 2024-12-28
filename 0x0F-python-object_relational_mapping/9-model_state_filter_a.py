@@ -16,15 +16,10 @@ if __name__ == "__main__":
     username, password, database = sys.argv[1:]
 
     engine = create_engine(f'mysql+mysqldb://{username}:{password}'
-                       f'@localhost:3306/{database}', pool_pre_ping=True)
+                           f'@localhost:3306/{database}', pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
     for states in session.query(State).filter(State.name.like('%a%')):
         print(f"{states.id}: {states.name}")
-
-    
-
-    #session.close()
-    
