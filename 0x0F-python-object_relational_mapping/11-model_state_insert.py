@@ -22,7 +22,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_record = State(name='Loiusana')
+    new_record = State(name='Louisiana')
     session.add(new_record)
 
     session.commit()
