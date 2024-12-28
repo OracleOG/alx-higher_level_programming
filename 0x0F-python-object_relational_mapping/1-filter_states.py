@@ -30,7 +30,7 @@ def filter_table(db):
         cur = db.cursor()
 
         cur.execute("""SELECT * FROM states
-                     WHERE states.name LIKE 'N%' ORDER BY id ASC""")
+                     WHERE BINARY states.name LIKE 'N%' ORDER BY id ASC""")
         rows = cur.fetchall()
 
         for row in rows:

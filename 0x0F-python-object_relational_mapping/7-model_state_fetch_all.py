@@ -3,7 +3,7 @@
 
 
 import sys
-from sqlalchemy import create_engine
+from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
@@ -11,8 +11,9 @@ from model_state import Base, State
 def list_states(username, password, database):
     """Function to list all State objects from the database"""
     # Create engine to connect to the database
-    engine = create_engine(f'''mysql+mysqldb://{username}:{password}
-                           @localhost:3306/{database}''')
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}'
+                       f'@localhost:3306/{database}', pool_pre_ping=True)
+
 
     # Create a session to interact with the database
     Session = sessionmaker(bind=engine)

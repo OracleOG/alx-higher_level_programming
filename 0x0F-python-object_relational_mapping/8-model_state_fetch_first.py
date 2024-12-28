@@ -11,8 +11,8 @@ from model_state import Base, State
 def print_first_state(username, password, database):
     """Function to print the first State object from the database"""
     # Create engine to connect to the database
-    engine = create_engine(f'''mysql+mysqldb://{username}:{password}
-                           @localhost:3306/{database}''')
+    engine = create_engine(f'mysql+mysqldb://{username}:{password}'
+                           f'@localhost:3306/{database}', pool_pre_ping=True)
 
     # Create a session to interact with the database
     Session = sessionmaker(bind=engine)
@@ -25,10 +25,7 @@ def print_first_state(username, password, database):
     if first_state:
         print(f"{first_state.id}: {first_state.name}")
     else:
-        print("No State objects found in the database.")
-
-    # Close the session
-    session.close()
+        print("Nothing")
 
 
 if __name__ == "__main__":
