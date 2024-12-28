@@ -26,11 +26,13 @@ if __name__ == "__main__":
     name = '%s' % search_name
 
     try:
-        states = session.query(State).filter(State.name.like(f'''%{name}%
-                                                             ''')).first()
-        print(f"{states.id}")
+        states = session.query(State).filter(State.name.like(f'%{name}%')).first()
+        if states:
+            print(states.id)
+        else:
+            print("Not found")
     except Exception as e:
-        print("Not found")
+        print(f"Error: {e}")
 '''
     # Construct the query with a bound parameter
     query = session.query(State).filter(State.name.like(':name'))
