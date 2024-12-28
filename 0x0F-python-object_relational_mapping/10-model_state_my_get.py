@@ -30,7 +30,7 @@ if __name__ == "__main__":
         else:
             print("Not found")
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Not found")
 '''
     # Construct the query with a bound parameter
     query = session.query(State).filter(State.name.like(':name'))
