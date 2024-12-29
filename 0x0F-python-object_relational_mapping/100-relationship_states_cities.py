@@ -15,7 +15,7 @@ if __name__ == "__main__":
               name>""".format(sys.argv[0]))
         sys.exit(1)
 
-    username, password, database, = sys.argv[1:]
+    username, password, database = sys.argv[1:4]
 
     engine = create_engine(f'mysql+mysqldb://{username}:{password}'
                            f'@localhost:3306/{database}', pool_pre_ping=True)
@@ -24,12 +24,8 @@ if __name__ == "__main__":
     session = Session()
 
     new_state = State(name='California')
-    new_city = City(name='San Francisco', state_id=new_state.id)
+    new_city = City(name='San Francisco')
     new_state.cities.append(new_city)
-    session.add(new_state, new_city)
+    session.add(new_state)
 
     session.commit()
-    print("id  name")
-    print(new_state.id, new_state.name)
-    print('id  name  state_id')
-    print(new_city.id, new_city.name, new_city.state_id)
