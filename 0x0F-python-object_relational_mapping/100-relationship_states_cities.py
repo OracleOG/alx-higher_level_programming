@@ -5,7 +5,8 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from relationship_state import Base, State
+from relationship_city import City
 
 
 if __name__ == "__main__":
@@ -22,8 +23,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_record = State(name='Louisiana')
-    session.add(new_record)
+    new_state = State(name='California')
+    new_city = City(name='San Francisco', state_id=new_state.id)
+    session.add(new_state, new_city)
 
     session.commit()
-    print(new_record.id)
+    print("id  name")
+    print(new_state.id, new_state.name)
+    print('id  name  state_id')
+    print(new_city.id, new_city.name, new_city.state_id)
