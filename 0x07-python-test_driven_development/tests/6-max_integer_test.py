@@ -10,6 +10,7 @@ Test Cases:
 - if the list is empty.
 - only negative numbers exist in the list.
 - one negative number exists in the list.
+- one element in the list.
 """
 
 import unittest
@@ -36,6 +37,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-1,-2,-3,-4,-5]), -1)
     def test_oneNegativeNumbers(self):
         self.assertEqual(max_integer([1,2,3,4,-5]), 4)
+    def test_oneElement(self):
+        self.assertEqual(max_integer([1]), 1)
     def test_stringInAList(self):
         with self.assertRaises(TypeError):
             max_integer([2,3,2,1,'a'])
